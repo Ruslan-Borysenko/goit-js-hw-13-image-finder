@@ -1,0 +1,28 @@
+{{!-- {{#each hits}}
+<li class="image-gallery__item"><img src="{{this.largeImageURL}}" alt="{{this.tags}}" width="450"></li>
+{{/each}} --}}
+
+{{#each hits}}
+<li class="image-gallery__item">
+    <img src="{{this.largeImageURL}}" alt="{{this.tags}}" width="400" height="280" class="image-gallery__image" />
+
+    <div class="stats">
+        <p class="stats-item">
+            <i class="material-icons">thumb_up</i>
+        <p class="stat-item">{{likes}}</p>
+        </p>
+        <p class="stats-item">
+            <i class="material-icons">visibility</i>
+        <p class="stat-item">{{views}}</p>
+        </p>
+        <p class="stats-item">
+            <i class="material-icons">comment</i>
+        <p class="stat-item">{{comments}}</p>
+        </p>
+        <p class="stats-item">
+            <i class="material-icons">cloud_download</i>
+        <p class="stat-item">{{downloads}}</p>
+        </p>
+    </div>
+</li>
+{{/each}}
