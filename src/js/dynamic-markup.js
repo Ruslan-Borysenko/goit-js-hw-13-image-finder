@@ -2,6 +2,7 @@ import { refs } from './refs';
 import galleryTemplate from '../templates/gallery-template.hbs';
 import apiService from './apiServise';
 import { infiniteScroll } from './infinite-scroll';
+import { scrollPage } from './scroll-page';
 
 function makeMarkup(imgArray) {
   const markup = galleryTemplate(imgArray);
@@ -32,22 +33,7 @@ export function finalMarkup() {
 
 export function finalMarkupLoadMoreBtn() {
   apiService.fetchImg().then(result => {
-    let value = getScrollToHeight();
     makeMarkup(result);
-    scrollTo(value);
-  });
-}
-
-function getScrollToHeight() {
-  let windowHeight = document.documentElement.offsetHeight;
-  let oneLine = 320;
-  let scrollTo = windowHeight - oneLine;
-  return scrollTo;
-}
-
-function scrollTo(value) {
-  window.scrollTo({
-    top: value,
-    behavior: 'smooth',
+    scrollPage();
   });
 }
