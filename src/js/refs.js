@@ -73,5 +73,5 @@ export function createDOM() {
 
   //add infiniteScrollTrigger
   refs.infiniteScrollTrigger.setAttribute('id', 'infinite-scroll-trigger');
-  refs.body.append(refs.infiniteScrollTrigger);
+  refs.loadMoreBtn.replaceWith(refs.infiniteScrollTrigger);
 }

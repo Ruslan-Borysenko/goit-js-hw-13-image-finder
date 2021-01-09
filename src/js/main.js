@@ -3,3 +3,5 @@ import './components/lightbox';
 
 addEventListeners();
 createDOM();
+
+console.log(window.innerHeight);

@@ -25,7 +25,7 @@ export function finalMarkup() {
   apiService.resetPage();
   apiService.fetchImg().then(images => {
     makeMarkup(images);
-    // infiniteScroll();
+    infiniteScroll();
     refs.loadMoreBtn.classList.remove('is-hidden');
     return;
   });
